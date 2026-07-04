@@ -7,6 +7,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <Entities.h>
 
 #include "raylib/raylib.h"
 //#include "raylib/raymath.h"
@@ -52,15 +53,13 @@ void drawGameWorld( GameWorld *gw ) {
     BeginDrawing();
     ClearBackground( WHITE );
 
-    const char *text = "Basic game template";
-    Vector2 m = MeasureTextEx( GetFontDefault(), text, 40, 4 );
-    int x = GetScreenWidth() / 2 - m.x / 2;
-    int y = GetScreenHeight() / 2 - m.y / 2;
-    DrawRectangle( x, y, m.x, m.y, BLACK );
-    DrawText( text, x, y, 40, WHITE );
+    Vector2 teste;
+    teste.x = GetScreenWidth() / 2;
+    teste.y = GetScreenHeight() / 2;  
 
     DrawFPS( 20, 20 );
 
+    DrawEntities(teste, 500, 200, BLUE);
     EndDrawing();
 
 }
