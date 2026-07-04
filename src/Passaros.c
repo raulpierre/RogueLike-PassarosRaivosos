@@ -12,5 +12,6 @@ typedef struct Birds{
 void DrawBirds(int *delta){
     
 }
+void testeBranch(){}
 void updateBird(int *delta){}
 void clickTimeEvent(){}
