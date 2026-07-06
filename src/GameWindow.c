@@ -116,7 +116,7 @@ void initGameWindow( GameWindow *gameWindow ) {
 
             updateGameWorld( gameWindow->gw, delta );
             drawGameWorld( gameWindow->gw );
-            
+            processWindowInput();
         }
 
         if ( gameWindow->loadResources ) {
@@ -135,6 +135,12 @@ void initGameWindow( GameWindow *gameWindow ) {
 
     }
 
+}
+
+void processWindowInput(){
+    if(IsKeyPressed(KEY_F11)){
+        ToggleFullscreen();
+    }
 }
 
 /**

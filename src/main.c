@@ -20,8 +20,8 @@ int main( void ) {
         "Window Title",  // title
         60,              // target FPS
         true,            // antialiasing
-        false,           // resizable
-        false,           // full screen
+        true,           // resizable
+        true,            // full screen
         false,           // undecorated
         false,           // always on top
         false,           // invisible background
@@ -31,6 +31,7 @@ int main( void ) {
     );
 
     initGameWindow( gameWindow );
+    
 
     return 0;
 

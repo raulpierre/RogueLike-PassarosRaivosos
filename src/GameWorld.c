@@ -56,10 +56,11 @@ void drawGameWorld( GameWorld *gw ) {
     Vector2 teste;
     teste.x = GetScreenWidth() / 2;
     teste.y = GetScreenHeight() / 2;  
-
+    int width = 500;
+    int height = 200;
     DrawFPS( 20, 20 );
 
-    DrawEntities(teste, 500, 200, BLUE);
+    
     EndDrawing();
 
 }

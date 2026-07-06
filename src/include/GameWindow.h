@@ -58,6 +58,7 @@ GameWindow *createGameWindow(
  */
 void initGameWindow( GameWindow *gameWindow );
 
+void processWindowInput();
 /**
  * @brief Destroys a GameWindow object and its dependecies.
  */
