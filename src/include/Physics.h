@@ -2,11 +2,13 @@
 
 #include "raylib/raylib.h"
 #include <stdbool.h>
+#include <stdint.h>
 
 typedef enum TypeEntities {
     BIRDS,
     BLOCKS,
-    FLOOR
+    FLOOR,
+    PIGS
 } TypeEntities;
 
 typedef enum {
@@ -30,15 +32,15 @@ typedef struct MaterialDef {
 } MaterialDef;
 
 typedef enum {
-    CIRCLE_ENTITIE,
-    RECTANGLE_ENTITIE
+    CIRCLE_ENTITY,
+    RECTANGLE_ENTITY
 } TypeTag;
 
 typedef struct Collider {
     TypeTag tag;
     union {
         float radius;
-        typedef struct {
+        struct {
             float widgth;
             float height;
         };
@@ -46,13 +48,14 @@ typedef struct Collider {
 } Collider;
 
 typedef struct PhysicalEntity {
-    RigidBody *rb;
-    Collider *colider;
+    RigidBody rb;
+    Collider colider;
     int hp;
-
-
-
-};
+    uint32_t id;
+    TypeEntities entityTypo;
+    uint8_t materialID;
+    bool active;
+}PhysicalEntity;
 // se quiser adicionar efeito só colocar aqui
 
 
