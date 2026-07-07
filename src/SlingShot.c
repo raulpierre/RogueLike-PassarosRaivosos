@@ -1,5 +1,4 @@
 #include "raylib.h"
+#include "SlingShot.h"
 
-void DrawSlingShot(int *delta){
-    
-}
+void updateSlingShot(){}
