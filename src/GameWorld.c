@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Entities.h>
+#include "SlingShot.h"
 
 #include "raylib/raylib.h"
 //#include "raylib/raymath.h"
@@ -54,13 +55,21 @@ void drawGameWorld( GameWorld *gw ) {
     ClearBackground( WHITE );
 
     Vector2 teste;
-    teste.x = GetScreenWidth() / 2;
-    teste.y = GetScreenHeight() / 2;  
-    int width = 500;
-    int height = 200;
+    teste.x = GetScreenWidth() / 5;
+    teste.y = GetScreenHeight() * 0.60f;  
+    SlingShot estilingue = {
+        .posicao = teste,
+        .height = 150,
+        .width = 50,
+        .radiusMax = 50,
+        .kinectEnergy = 0,
+        //.projectile = (Entities),
+        .state = AIM
+    };
+    DrawRectangle(0, GetScreenHeight(), GetScreenWidth(), teste.y, GREEN);
     DrawFPS( 20, 20 );
 
-    
+    DrawSlingShot(&estilingue);
     EndDrawing();
 
 }

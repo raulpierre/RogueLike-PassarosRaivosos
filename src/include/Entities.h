@@ -2,11 +2,24 @@
 #include "raylib/raylib.h"
 #include <stdint.h>
 
+typedef enum TypeEntities {
+    BIRDS,
+    BLOCKS,
+    FLOOR,
+    PIGS
+} TypeEntities;
+
+typedef enum TypeMaterial{
+    WOOD,
+    GLASS, 
+    STONE
+} TypeMaterial;
+
 typedef struct Entities {
     Vector2 position;
     int mass;
-    int width;
-    int height;
+    TypeEntities typeEntitie;
+    TypeMaterial typeMaterial;
     uint32_t id;
 }Entities;
 

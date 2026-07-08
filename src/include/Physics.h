@@ -3,19 +3,7 @@
 #include "raylib/raylib.h"
 #include <stdbool.h>
 #include <stdint.h>
-
-typedef enum TypeEntities {
-    BIRDS,
-    BLOCKS,
-    FLOOR,
-    PIGS
-} TypeEntities;
-
-typedef enum {
-    WOOD,
-    GLASS, 
-    STONE
-} TypeMaterial;
+#include "Entities.h"
 
 typedef struct RigidBody {
     Vector2 position;
@@ -31,20 +19,20 @@ typedef struct MaterialDef {
     int hp;
 } MaterialDef;
 
-typedef enum {
+typedef enum TypeTag{
     CIRCLE_ENTITY,
     RECTANGLE_ENTITY
 } TypeTag;
 
 typedef struct Collider {
     TypeTag tag;
-    union {
+    union Size{
         float radius;
-        struct {
+        struct proportion{
             float widgth;
             float height;
-        };
-    } Size;
+        }proportion;
+    }Size;
 } Collider;
 
 typedef struct PhysicalEntity {
