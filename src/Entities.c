@@ -1,14 +1,39 @@
-#include "include/Entities.h"
+#include "Entities.h"
 #include "raylib/raylib.h"
 
 
+static Entities entityPool[MAX_ENTITIES];
 
 
 
 //static uint32_t global_id_count = 1;
 
+//tabelas para
+static const MaterialDef materialTable[] = {
+    [WOOD] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
+    [GLASS] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
+    [STONE] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
 
-// Entities* CreateBlock(float x, float y, int typeMaterial) {
+};
+
+MaterialDef getMaterialDef(TypeMaterial type) {
+
+}
+
+
+Entities* searchEmptySlot(void) {
+
+    for (int i = 0; i < MAX_ENTITIES; i++) {
+
+        if (!entityPool[i].active) {
+            return &entityPool;
+        }
+    }
+
+    return NULL;
+}
+
+Entities* CreateBlock(float x, float y, int typeMaterial) {
 
 //     Entities* newBlock = searchEmptySlot();
 

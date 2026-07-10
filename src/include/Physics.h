@@ -1,50 +1,10 @@
 #pragma once
 
 #include "raylib/raylib.h"
+#include "Entities.h"
 #include <stdbool.h>
 #include <stdint.h>
-#include "Entities.h"
 
-typedef struct RigidBody {
-    Vector2 position;
-    Vector2 vel;
-    int force;      
-    float inverseMass;      //como o chao vai ser um bloco de massa infinita, é mais facil calcular a massa invertida  para nao lidar 
-} RigidBody;                // com divisões por zero
-
-typedef struct MaterialDef {
-    float density;
-    float elasticity;
-    float fricction;
-    int hp;
-} MaterialDef;
-
-typedef enum TypeTag{
-    CIRCLE_ENTITY,
-    RECTANGLE_ENTITY
-} TypeTag;
-
-typedef struct Collider {
-    TypeTag tag;
-    union Size{
-        float radius;
-        struct proportion{
-            float widgth;
-            float height;
-        }proportion;
-    }Size;
-} Collider;
-
-typedef struct PhysicalEntity {
-    RigidBody rb;
-    Collider colider;
-    int hp;
-    uint32_t id;
-    TypeEntities entityType;
-    uint8_t materialID;
-    bool active;
-}PhysicalEntity;
-// se quiser adicionar efeito só colocar aqui
 
 
 
