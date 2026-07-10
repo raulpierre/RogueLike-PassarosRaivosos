@@ -40,7 +40,7 @@ typedef struct PhysicalEntity {
     Collider colider;
     int hp;
     uint32_t id;
-    TypeEntities entityTypo;
+    TypeEntities entityType;
     uint8_t materialID;
     bool active;
 }PhysicalEntity;
@@ -48,3 +48,5 @@ typedef struct PhysicalEntity {
 
 
 
+
+PhysicalEntity* searchEmptySlot(void);

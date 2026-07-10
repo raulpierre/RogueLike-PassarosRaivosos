@@ -10,8 +10,8 @@ void DrawSlingShot(SlingShot *SlingShot){
     rec.height = SlingShot->height;
     rec.width = SlingShot->width;
 
-    Vector2 seila;
-    seila.x = 20;
-    seila.y = 20;
-    DrawRectanglePro(rec, seila, 0.0f, BLACK);
+    Vector2 beginning; //serve de demarcação de onde deve começar a desenhar
+    beginning.x = 0;
+    beginning.y = 0;
+    DrawRectanglePro(rec, beginning, 180.0f, BLACK);
 }

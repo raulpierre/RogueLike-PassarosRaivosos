@@ -5,5 +5,5 @@ typedef enum DefLineUp{
     TOP // nao pode ter nada em cima 
 }DefLineUp;
 
-int MapDivision(int ScrennHeight, int Screenwidht); // dividde cada espaco do mapa para que facilite a geração
-int MapInsertion(); // 
+int MapDivision(int height, int widht); // divide cada espaco do mapa para que facilite a geração
+int DrawMap(); // 

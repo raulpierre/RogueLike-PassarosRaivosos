@@ -5,19 +5,25 @@
  * 
  * @copyright Copyright (c) 2026
  */
+
+//imports padrao
 #include <stdio.h>
 #include <stdlib.h>
-#include <Entities.h>
-#include "SlingShot.h"
 
+//imports local
+#include "Entities.h"
+#include "SlingShot.h"
+#include "ResourceManager.h"
+#include "GameWorld.h"
+#include "MapGeneration.h"
+
+//imports raylib
 #include "raylib/raylib.h"
 //#include "raylib/raymath.h"
 //#define RAYGUI_IMPLEMENTATION    // to use raygui, comment these three lines.
 //#include "raylib/raygui.h"       // other compilation units must only include
 //#undef RAYGUI_IMPLEMENTATION     // raygui.h
 
-#include "GameWorld.h"
-#include "ResourceManager.h"
 
 /**
  * @brief Creates a dinamically allocated GameWorld struct instance.
@@ -56,7 +62,7 @@ void drawGameWorld( GameWorld *gw ) {
 
     Vector2 teste;
     teste.x = GetScreenWidth() / 5;
-    teste.y = GetScreenHeight() * 0.60f;  
+    teste.y = GetScreenHeight() * 0.75f;  // sempre desenha o estilingue apartir de 75% de altura da tela 
     SlingShot estilingue = {
         .posicao = teste,
         .height = 150,
@@ -66,8 +72,8 @@ void drawGameWorld( GameWorld *gw ) {
         //.projectile = (Entities),
         .state = AIM
     };
-    DrawRectangle(0, GetScreenHeight(), GetScreenWidth(), teste.y, GREEN);
-    DrawFPS( 20, 20 );
+    
+
 
     DrawSlingShot(&estilingue);
     EndDrawing();

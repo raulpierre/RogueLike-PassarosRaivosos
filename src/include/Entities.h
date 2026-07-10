@@ -1,16 +1,15 @@
 #pragma once
 
 #include "raylib/raylib.h"
-#include "Physics.h"
 #include <stdint.h>
 #include <stdbool.h>
 
-typedef enum TypeEntities {
+typedef enum TypeEntities{
     BIRDS,
     BLOCKS,
     FLOOR,
     PIGS
-} TypeEntities;
+}TypeEntities;
 
 typedef enum TypeMaterial{
     WOOD,
@@ -26,13 +25,11 @@ typedef struct Entities {
     uint32_t id;
     bool active;
     bool isMaterial;
-    TypeEntities entityTypo;
 }Entities;
 
 void DrawEntities(Vector2 position, int width, int height, Color color);
 
 void updateEntities(Entities *ent, float delta);
 
-PhysicalEntity* searchEmptySlot(void);
 
 Entities* CreateBlock(float x, float y, int typeMaterial);
