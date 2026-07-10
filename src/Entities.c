@@ -1,14 +1,26 @@
 #include "Entities.h"
-#include "Physics.h"
 #include "raylib/raylib.h"
 
 #define MAX_ENTITIES 200
 
-static PhysicalEntity entityPool[MAX_ENTITIES];
+static Entities entityPool[MAX_ENTITIES];
 
 static uint32_t global_id_count = 1;
 
-PhysicalEntity* searchEmptySlot(void) {
+//tabelas para
+static const MaterialDef materialTable[] = {
+    [WOOD] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
+    [GLASS] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
+    [STONE] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
+
+};
+
+MaterialDef getMaterialDef(TypeMaterial type) {
+
+}
+
+
+Entities* searchEmptySlot(void) {
 
     for (int i = 0; i < MAX_ENTITIES; i++) {
 
