@@ -4,15 +4,15 @@
 
 typedef enum stateSlingShot{SLOTHFUL, AIM, FIRED} stateSlingShot;
 
-typedef struct SlingShot{
+typedef struct Estilingue{
     Vector2 posicao;
-    float height;
-    float width;
-    float radiusMax;
-    float kinectEnergy;
+    float altura;
+    float largura;
+    float raioMax;
+    float energiaCinetica;
     stateSlingShot state;
     //Entities projectile;
-}SlingShot;
+}Estilingue;
 
-void updateSlingShot(SlingShot *SlingShot, int *delta); 
-void DrawSlingShot(SlingShot *SlingShot);
+void updateSlingShot(Estilingue *Estilingue, int *delta); 
+void DrawSlingShot(Estilingue *Estilingue);

@@ -7,7 +7,6 @@
 typedef enum TypeEntities {
     BIRDS,
     BLOCKS,
-    FLOOR,
     PIGS
 } TypeEntities;
 
@@ -17,40 +16,40 @@ typedef enum {
     STONE
 } TypeMaterial;
 
-typedef struct RigidBody {
+typedef struct CorpoSolido {
     Vector2 position;
     Vector2 vel;
     int force;      
     float inverseMass;      //como o chao vai ser um bloco de massa infinita, é mais facil calcular a massa invertida  para nao lidar 
-} RigidBody;                // com divisões por zero
+} CorpoSolido;                // com divisões por zero
 
 typedef struct MaterialDef {
-    float density;
-    float elasticity;
-    float fricction;
-    int hp;
+    float densidade;
+    float elasticidade;
+    float friccao;
+    int vida;
 } MaterialDef;
 
 typedef enum {
-    CIRCLE_ENTITY,
-    RECTANGLE_ENTITY
+    ENTIDADE_CIRCULO,
+    ENTIDADE_RETANGULO
 } TypeTag;
 
-typedef struct Collider {
+typedef struct Colisor {
     TypeTag tag;
     union {
-        float radius;
-        struct {
-            float widgth;
-            float height;
-        };
-    } Size;
-} Collider;
+        float raio;
+        struct Proporcao{
+            float largura;
+            float altura;
+        }Proporcao;
+    }Size;
+} Colisor;
 
 typedef struct Entites {
-    RigidBody rb;
-    Collider colider;
-    int hp;
+    CorpoSolido rb;
+    Colisor colisor;
+    int vida;
     uint32_t id;
     TypeEntities entityTypo;
     uint8_t subtypeID;
@@ -59,7 +58,7 @@ typedef struct Entites {
 // se quiser adicionar efeito só colocar aqui
 
 
-void DrawEntities(Vector2 position, int width, int height, Color color);
+void DrawEntities(Vector2 position, int largura, int altura, Color color);
 
 void updateEntities(Entities *ent, float delta);
 

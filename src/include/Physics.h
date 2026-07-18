@@ -2,11 +2,8 @@
 
 #include "raylib/raylib.h"
 #include "Entities.h"
-#include <stdbool.h>
-#include <stdint.h>
 
 
 
 
-
-PhysicalEntity* searchEmptySlot(void);
+int apitodafloresta(int floresta);

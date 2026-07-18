@@ -61,21 +61,34 @@ void drawGameWorld( GameWorld *gw ) {
     ClearBackground( WHITE );
 
     Vector2 teste;
-    teste.x = GetScreenWidth() / 5;
+    teste.x = GetScreenWidth() / 5 - 50;
     teste.y = GetScreenHeight() * 0.75f;  // sempre desenha o estilingue apartir de 75% de altura da tela 
-    SlingShot estilingue = {
+    Estilingue estilingue = {
         .posicao = teste,
-        .height = 150,
-        .width = 50,
-        .radiusMax = 50,
-        .kinectEnergy = 0,
+        .altura = 100,
+        .largura = 50,
+        .raioMax = 50,
+        .energiaCinetica = 0,
         //.projectile = (Entities),
         .state = AIM
     };
-    
-
-
     DrawSlingShot(&estilingue);
+    
+    Floor floor = {
+        .origem.x = 0,
+        .origem.y = GetScreenHeight() * 0.75,
+        .largura = GetScreenWidth(),
+        .altura = GetScreenHeight()
+    };
+    drawFloor(floor);
+
+    uint32_t seed_escolhida = 322; 
+    definirSemente(seed_escolhida);
+
+    inicializarMapa();
+    rodarWFC();
+    desenharMapa();
+
     EndDrawing();
 
 }

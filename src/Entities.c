@@ -1,39 +1,41 @@
+#include <stdio.h>
+
 #include "Entities.h"
 #include "raylib/raylib.h"
 
+#define MAX_ENTITIES  200
+// static Entities entityPool[MAX_ENTITIES];
 
-static Entities entityPool[MAX_ENTITIES];
 
 
-
-//static uint32_t global_id_count = 1;
+// static uint32_t global_id_count = 1;
 
 //tabelas para
-static const MaterialDef materialTable[] = {
-    [WOOD] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
-    [GLASS] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
-    [STONE] = {.density = 0.6f, .elasticity = 0.4f, .fricction = 0.5f, .hp = 1},
+// static const MaterialDef materialTable[] = {
+//     [WOOD] = {.densidade = 0.6f, .elasticidade = 0.4f, .friccao = 0.5f, .vida = 1},
+//     [GLASS] = {.densidade = 0.6f, .elasticidade = 0.4f, .friccao = 0.5f, .vida = 1},
+//     [STONE] = {.densidade = 0.6f, .elasticidade = 0.4f, .friccao = 0.5f, .vida = 1},
 
-};
+// };
 
-MaterialDef getMaterialDef(TypeMaterial type) {
+// MaterialDef getMaterialDef(TypeMaterial type) {
 
-}
+// }
 
 
-Entities* searchEmptySlot(void) {
+// Entities* searchEmptySlot(void) {
 
-    for (int i = 0; i < MAX_ENTITIES; i++) {
+//     for (int i = 0; i < MAX_ENTITIES; i++) {
 
-        if (!entityPool[i].active) {
-            return &entityPool;
-        }
-    }
+//         if (!entityPool[i].active) {
+//             return &entityPool;
+//         }
+//     }
 
-    return NULL;
-}
+//     return NULL;
+// }
 
-Entities* CreateBlock(float x, float y, int typeMaterial) {
+// Entities* CreateBlock(float x, float y, int typeMaterial) {
 
 //     Entities* newBlock = searchEmptySlot();
 
@@ -52,10 +54,10 @@ Entities* CreateBlock(float x, float y, int typeMaterial) {
 //     return &newBlock;
 // }
 
-void DrawEntities(Vector2 position, int width, int height, Color color){
-    DrawRectangle(position.x, position.y, width, height, color);
+void DrawEntities(Vector2 position, int largura, int altura, Color color){
+    DrawRectangle(position.x, position.y, largura, altura, color);
 }
 
-void updateEntities(Entities *ent, float delta) {
+// void updateEntities(Entities *ent, float delta) {
 
-}
+// }

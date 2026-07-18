@@ -18,8 +18,8 @@
  * @brief Creates a dinamically allocated GameWindow struct instance.
  */
 GameWindow *createGameWindow( 
-        int width, 
-        int height, 
+        int largura, 
+        int altura, 
         const char *title, 
         int targetFPS,
         bool antialiasing, 
@@ -34,8 +34,8 @@ GameWindow *createGameWindow(
 
     GameWindow *gameWindow = (GameWindow*) malloc( sizeof( GameWindow ) );
 
-    gameWindow->width = width;
-    gameWindow->height = height;
+    gameWindow->largura = largura;
+    gameWindow->altura = altura;
     gameWindow->title = title;
     gameWindow->targetFPS = targetFPS;
     gameWindow->antialiasing = antialiasing;
@@ -92,7 +92,7 @@ void initGameWindow( GameWindow *gameWindow ) {
             SetConfigFlags( FLAG_WINDOW_ALWAYS_RUN );
         }
 
-        InitWindow( gameWindow->width, gameWindow->height, gameWindow->title );
+        InitWindow( gameWindow->largura, gameWindow->altura, gameWindow->title );
 
         SetTargetFPS( gameWindow->targetFPS );    
 

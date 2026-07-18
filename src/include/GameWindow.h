@@ -13,8 +13,8 @@
 
 typedef struct GameWindow {
 
-    int width;
-    int height;
+    int largura;
+    int altura;
     const char *title;
 
     int targetFPS;
@@ -38,8 +38,8 @@ typedef struct GameWindow {
  * @brief Creates a dinamically allocated GameWindow struct instance.
  */
 GameWindow *createGameWindow(
-        int width, 
-        int height, 
+        int largura, 
+        int altura, 
         const char *title, 
         int targetFPS,
         bool antialiasing, 

@@ -1,14 +1,14 @@
 #include "raylib.h"
 #include "SlingShot.h"
 
-void updateSlingShot(SlingShot *SlingShot, int *delta){}
+void updateSlingShot(Estilingue *Estilingue, int *delta){}
 
-void DrawSlingShot(SlingShot *SlingShot){
+void DrawSlingShot(Estilingue *Estilingue){
     Rectangle rec;
-    rec.x = SlingShot->posicao.x;
-    rec.y = SlingShot->posicao.y;
-    rec.height = SlingShot->height;
-    rec.width = SlingShot->width;
+    rec.x = Estilingue->posicao.x;
+    rec.y = Estilingue->posicao.y;
+    rec.height = Estilingue->altura;
+    rec.width = Estilingue->largura;
 
     Vector2 beginning; //serve de demarcação de onde deve começar a desenhar
     beginning.x = 0;
